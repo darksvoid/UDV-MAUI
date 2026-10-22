@@ -1,0 +1,33 @@
+## Visual Studio / .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userprefs
+
+## MAUI / сборка
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]64/
+*.binlog
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
+*.cer
+*.pfx
+
+## Rider
+.idea/
+
+## Прочее
+.DS_Store
+Thumbs.db
+*.log
+
+## Методички
+*.pdf
+.claude/

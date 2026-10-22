@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitnessSurvey.MainPage"
+             Title="Анкета фитнес-клуба"
+             BackgroundColor="#F5F7FA">
+
+    <ScrollView x:Name="SurveyScroll">
+        <VerticalStackLayout x:Name="SurveyLayout"
+                             Spacing="12"
+                             Padding="20,24,20,32">
+
+            <!-- Шапка анкеты -->
+            <Grid x:Name="HeaderGrid"
+                  ColumnSpacing="16"
+                  RowSpacing="2"
+                  Margin="0,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Image x:Name="ClubLogo"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="2"
+                       Source="logo.png"
+                       Aspect="AspectFit"
+                       HeightRequest="110" />
+
+                <Label x:Name="TitleLabel"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Text="Фитнес-клуб «Энергия»"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="#1B3A5C"
+                       VerticalOptions="End" />
+
+                <Label x:Name="SubtitleLabel"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Text="Анкета для записи на первую тренировку"
+                       FontSize="14"
+                       FontAttributes="Italic"
+                       TextColor="#5A6B7D" />
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
