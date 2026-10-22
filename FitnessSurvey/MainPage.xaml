@@ -50,6 +50,56 @@
                        TextColor="#5A6B7D" />
             </Grid>
 
+            <!-- Имя -->
+            <Label x:Name="NameLabel"
+                   Text="Имя и фамилия"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C"
+                   Margin="0,4,0,0" />
+            <Entry x:Name="NameEntry"
+                   Placeholder="Например: Никита Козлов"
+                   Keyboard="Text"
+                   MaxLength="40"
+                   Margin="0,0,0,4" />
+
+            <!-- Телефон -->
+            <Label x:Name="PhoneLabel"
+                   Text="Контактный телефон"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C" />
+            <Entry x:Name="PhoneEntry"
+                   Placeholder="+7 900 123-45-67"
+                   Keyboard="Telephone"
+                   MaxLength="18"
+                   Margin="0,0,0,4" />
+
+            <Label x:Name="HintLabel"
+                   Text="Заполните имя и телефон — без них заявку не примут"
+                   FontSize="13"
+                   FontAttributes="Italic"
+                   TextColor="#C0392B"
+                   IsVisible="True"
+                   Margin="0,0,0,4" />
+
+            <!-- Направление -->
+            <Label x:Name="DirectionLabel"
+                   Text="Направление тренировок"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C" />
+            <Picker x:Name="DirectionPicker"
+                    Title="Выберите направление"
+                    Margin="0,0,0,4">
+                <Picker.Items>
+                    <x:String>Тренажёрный зал</x:String>
+                    <x:String>Групповые занятия</x:String>
+                    <x:String>Бассейн</x:String>
+                    <x:String>Единоборства</x:String>
+                </Picker.Items>
+            </Picker>
+
         </VerticalStackLayout>
     </ScrollView>
 
