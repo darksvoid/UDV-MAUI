@@ -61,7 +61,8 @@
                    Placeholder="Например: Никита Козлов"
                    Keyboard="Text"
                    MaxLength="40"
-                   Margin="0,0,0,4" />
+                   Margin="0,0,0,4"
+                   TextChanged="OnRequiredFieldChanged" />
 
             <!-- Телефон -->
             <Label x:Name="PhoneLabel"
@@ -73,7 +74,8 @@
                    Placeholder="+7 900 123-45-67"
                    Keyboard="Telephone"
                    MaxLength="18"
-                   Margin="0,0,0,4" />
+                   Margin="0,0,0,4"
+                   TextChanged="OnRequiredFieldChanged" />
 
             <Label x:Name="HintLabel"
                    Text="Заполните имя и телефон — без них заявку не примут"
@@ -217,6 +219,62 @@
                     MaxLength="300"
                     HeightRequest="110"
                     Margin="0,0,0,8" />
+
+            <!-- Кнопки -->
+            <Grid x:Name="ButtonsGrid"
+                  ColumnSpacing="12"
+                  Margin="0,0,0,8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="ShowResultButton"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Показать результат"
+                        FontSize="16"
+                        BackgroundColor="#1B3A5C"
+                        TextColor="White"
+                        CornerRadius="8"
+                        HeightRequest="48"
+                        Clicked="OnShowResultClicked" />
+                <Button x:Name="ClearButton"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="Очистить"
+                        FontSize="16"
+                        BackgroundColor="#B0BEC5"
+                        TextColor="#1B3A5C"
+                        CornerRadius="8"
+                        HeightRequest="48"
+                        Clicked="OnClearClicked" />
+            </Grid>
+
+            <!-- Результат -->
+            <Border x:Name="ResultBorder"
+                    IsVisible="False"
+                    Stroke="#1B3A5C"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 10"
+                    BackgroundColor="White"
+                    Padding="16">
+                <VerticalStackLayout x:Name="ResultLayout" Spacing="6">
+                    <Label x:Name="ResultTitleLabel"
+                           Text="Ваши ответы"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#1B3A5C" />
+                    <Label x:Name="ResultLabel"
+                           Text=""
+                           FontSize="14"
+                           FontAttributes="None"
+                           TextColor="#263238" />
+                </VerticalStackLayout>
+            </Border>
 
         </VerticalStackLayout>
     </ScrollView>
