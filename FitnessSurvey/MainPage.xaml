@@ -171,6 +171,53 @@
                        VerticalOptions="Center" />
             </HorizontalStackLayout>
 
+            <!-- Дата старта -->
+            <Label x:Name="DateLabel"
+                   Text="Желаемая дата первой тренировки"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C" />
+            <DatePicker x:Name="StartDatePicker"
+                        Format="dd.MM.yyyy"
+                        Date="2026-11-02"
+                        MinimumDate="2026-10-01"
+                        MaximumDate="2027-03-31"
+                        Margin="0,0,0,4" />
+
+            <!-- Частота тренировок -->
+            <Label x:Name="VisitsTitleLabel"
+                   Text="Сколько раз в неделю планируете приходить"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C" />
+            <Slider x:Name="VisitsSlider"
+                    Minimum="1"
+                    Maximum="7"
+                    Value="3"
+                    MinimumTrackColor="#E67E22"
+                    MaximumTrackColor="#B0BEC5"
+                    ThumbColor="#1B3A5C"
+                    Margin="0,4,0,0" />
+            <Label x:Name="VisitsLabel"
+                   Text="{Binding Source={x:Reference VisitsSlider}, Path=Value, Mode=OneWay, StringFormat='Выбрано: {0:F0} раз(а) в неделю'}"
+                   FontSize="15"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C"
+                   Margin="0,0,0,4" />
+
+            <!-- Комментарий -->
+            <Label x:Name="CommentLabel"
+                   Text="Пожелания и ограничения по здоровью"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C" />
+            <Editor x:Name="CommentEditor"
+                    Placeholder="Травмы, хронические заболевания, удобное время занятий"
+                    AutoSize="TextChanges"
+                    MaxLength="300"
+                    HeightRequest="110"
+                    Margin="0,0,0,8" />
+
         </VerticalStackLayout>
     </ScrollView>
 
