@@ -100,6 +100,77 @@
                 </Picker.Items>
             </Picker>
 
+            <!-- Уровень подготовки -->
+            <Label x:Name="LevelLabel"
+                   Text="Уровень подготовки"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C" />
+            <VerticalStackLayout x:Name="LevelGroup"
+                                 Spacing="2"
+                                 Margin="4,0,0,4">
+                <RadioButton x:Name="LevelBeginner"
+                             Content="Начальный — раньше не занимался"
+                             GroupName="FitnessLevel"
+                             Value="Начальный"
+                             IsChecked="True" />
+                <RadioButton x:Name="LevelMiddle"
+                             Content="Средний — занимаюсь время от времени"
+                             GroupName="FitnessLevel"
+                             Value="Средний" />
+                <RadioButton x:Name="LevelAdvanced"
+                             Content="Продвинутый — тренируюсь регулярно"
+                             GroupName="FitnessLevel"
+                             Value="Продвинутый" />
+            </VerticalStackLayout>
+
+            <!-- Дополнительные услуги -->
+            <Label x:Name="ExtrasLabel"
+                   Text="Дополнительно"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#1B3A5C" />
+            <HorizontalStackLayout x:Name="TrainerRow"
+                                   Spacing="8"
+                                   Margin="0,0,0,2">
+                <CheckBox x:Name="TrainerCheck"
+                          IsChecked="False"
+                          Color="#E67E22"
+                          VerticalOptions="Center" />
+                <Label x:Name="TrainerCheckLabel"
+                       Text="Нужен персональный тренер"
+                       FontSize="15"
+                       FontAttributes="None"
+                       VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout x:Name="NewsRow"
+                                   Spacing="8"
+                                   Margin="0,0,0,2">
+                <CheckBox x:Name="NewsCheck"
+                          IsChecked="True"
+                          Color="#E67E22"
+                          VerticalOptions="Center" />
+                <Label x:Name="NewsCheckLabel"
+                       Text="Присылать расписание и акции клуба"
+                       FontSize="15"
+                       FontAttributes="None"
+                       VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout x:Name="MorningRow"
+                                   Spacing="10"
+                                   Margin="0,0,0,4">
+                <Switch x:Name="MorningSwitch"
+                        IsToggled="False"
+                        OnColor="#27AE60"
+                        ThumbColor="White"
+                        VerticalOptions="Center" />
+                <Label x:Name="MorningLabel"
+                       Text="Удобно заниматься утром, до 12:00"
+                       FontSize="15"
+                       FontAttributes="None"
+                       VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
 
