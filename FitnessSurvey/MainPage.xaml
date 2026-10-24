@@ -114,19 +114,27 @@
                    FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
-            <Picker x:Name="DirectionPicker"
-                    Title="Выберите направление"
-                    FontSize="16"
-                    TextColor="#2E2A24"
+            <Border x:Name="DirectionPickerBorder"
+                    Stroke="#C9BCA6"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
                     BackgroundColor="#FFFFFF"
+                    Padding="10,6"
                     Margin="0,0,0,4">
-                <Picker.Items>
-                    <x:String>Тренажёрный зал</x:String>
-                    <x:String>Групповые занятия</x:String>
-                    <x:String>Бассейн</x:String>
-                    <x:String>Единоборства</x:String>
-                </Picker.Items>
-            </Picker>
+                <Picker x:Name="DirectionPicker"
+                        Title="Выберите направление"
+                        TitleColor="#6E6456"
+                        FontSize="16"
+                        TextColor="#2E2A24"
+                        BackgroundColor="Transparent">
+                    <Picker.Items>
+                        <x:String>Тренажёрный зал</x:String>
+                        <x:String>Групповые занятия</x:String>
+                        <x:String>Бассейн</x:String>
+                        <x:String>Единоборства</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Border>
 
             <!-- Уровень подготовки -->
             <Label x:Name="LevelLabel"
@@ -134,23 +142,36 @@
                    FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
-            <VerticalStackLayout x:Name="LevelGroup"
-                                 Spacing="2"
-                                 Margin="4,0,0,4">
-                <RadioButton x:Name="LevelBeginner"
-                             Content="Начальный — раньше не занимался"
-                             GroupName="FitnessLevel"
-                             Value="Начальный"
-                             IsChecked="True" />
-                <RadioButton x:Name="LevelMiddle"
-                             Content="Средний — занимаюсь время от времени"
-                             GroupName="FitnessLevel"
-                             Value="Средний" />
-                <RadioButton x:Name="LevelAdvanced"
-                             Content="Продвинутый — тренируюсь регулярно"
-                             GroupName="FitnessLevel"
-                             Value="Продвинутый" />
-            </VerticalStackLayout>
+            <Border x:Name="LevelBorder"
+                    Stroke="#C9BCA6"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    BackgroundColor="#FFFFFF"
+                    Padding="12,8"
+                    Margin="0,0,0,4">
+                <VerticalStackLayout x:Name="LevelGroup"
+                                     Spacing="2">
+                    <RadioButton x:Name="LevelBeginner"
+                                 Content="Начальный — раньше не занимался"
+                                 GroupName="FitnessLevel"
+                                 Value="Начальный"
+                                 FontSize="16"
+                                 TextColor="#2E2A24"
+                                 IsChecked="True" />
+                    <RadioButton x:Name="LevelMiddle"
+                                 Content="Средний — занимаюсь время от времени"
+                                 GroupName="FitnessLevel"
+                                 Value="Средний"
+                                 FontSize="16"
+                                 TextColor="#2E2A24" />
+                    <RadioButton x:Name="LevelAdvanced"
+                                 Content="Продвинутый — тренируюсь регулярно"
+                                 GroupName="FitnessLevel"
+                                 Value="Продвинутый"
+                                 FontSize="16"
+                                 TextColor="#2E2A24" />
+                </VerticalStackLayout>
+            </Border>
 
             <!-- Дополнительные услуги -->
             <Label x:Name="ExtrasLabel"
@@ -158,46 +179,56 @@
                    FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
-            <HorizontalStackLayout x:Name="TrainerRow"
-                                   Spacing="8"
-                                   Margin="0,0,0,2">
-                <CheckBox x:Name="TrainerCheck"
-                          IsChecked="False"
-                          Color="#E67E22"
-                          VerticalOptions="Center" />
-                <Label x:Name="TrainerCheckLabel"
-                       Text="Нужен персональный тренер"
-                       FontSize="16"
-                       FontAttributes="None"
-                       VerticalOptions="Center" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout x:Name="NewsRow"
-                                   Spacing="8"
-                                   Margin="0,0,0,2">
-                <CheckBox x:Name="NewsCheck"
-                          IsChecked="True"
-                          Color="#E67E22"
-                          VerticalOptions="Center" />
-                <Label x:Name="NewsCheckLabel"
-                       Text="Присылать расписание и акции клуба"
-                       FontSize="16"
-                       FontAttributes="None"
-                       VerticalOptions="Center" />
-            </HorizontalStackLayout>
-            <HorizontalStackLayout x:Name="MorningRow"
-                                   Spacing="10"
-                                   Margin="0,0,0,4">
-                <Switch x:Name="MorningSwitch"
-                        IsToggled="False"
-                        OnColor="#27AE60"
-                        ThumbColor="White"
-                        VerticalOptions="Center" />
-                <Label x:Name="MorningLabel"
-                       Text="Удобно заниматься утром, до 12:00"
-                       FontSize="16"
-                       FontAttributes="None"
-                       VerticalOptions="Center" />
-            </HorizontalStackLayout>
+            <Border x:Name="ExtrasBorder"
+                    Stroke="#C9BCA6"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    BackgroundColor="#FFFFFF"
+                    Padding="12,8"
+                    Margin="0,0,0,4">
+                <VerticalStackLayout x:Name="ExtrasGroup" Spacing="6">
+                    <HorizontalStackLayout x:Name="TrainerRow"
+                                           Spacing="8">
+                        <CheckBox x:Name="TrainerCheck"
+                                  IsChecked="False"
+                                  Color="#E67E22"
+                                  VerticalOptions="Center" />
+                        <Label x:Name="TrainerCheckLabel"
+                               Text="Нужен персональный тренер"
+                               FontSize="16"
+                               FontAttributes="None"
+                               TextColor="#2E2A24"
+                               VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout x:Name="NewsRow"
+                                           Spacing="8">
+                        <CheckBox x:Name="NewsCheck"
+                                  IsChecked="True"
+                                  Color="#E67E22"
+                                  VerticalOptions="Center" />
+                        <Label x:Name="NewsCheckLabel"
+                               Text="Присылать расписание и акции клуба"
+                               FontSize="16"
+                               FontAttributes="None"
+                               TextColor="#2E2A24"
+                               VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout x:Name="MorningRow"
+                                           Spacing="10">
+                        <Switch x:Name="MorningSwitch"
+                                IsToggled="False"
+                                OnColor="#27AE60"
+                                ThumbColor="White"
+                                VerticalOptions="Center" />
+                        <Label x:Name="MorningLabel"
+                               Text="Удобно заниматься утром, до 12:00"
+                               FontSize="16"
+                               FontAttributes="None"
+                               TextColor="#2E2A24"
+                               VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
 
             <!-- Дата старта -->
             <Label x:Name="DateLabel"
@@ -205,15 +236,22 @@
                    FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
-            <DatePicker x:Name="StartDatePicker"
-                        Format="dd.MM.yyyy"
-                        FontSize="16"
-                        TextColor="#2E2A24"
-                        BackgroundColor="#FFFFFF"
-                        Date="2026-11-02"
-                        MinimumDate="2026-10-01"
-                        MaximumDate="2027-03-31"
-                        Margin="0,0,0,4" />
+            <Border x:Name="StartDateBorder"
+                    Stroke="#C9BCA6"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    BackgroundColor="#FFFFFF"
+                    Padding="10,6"
+                    Margin="0,0,0,4">
+                <DatePicker x:Name="StartDatePicker"
+                            Format="dd.MM.yyyy"
+                            FontSize="16"
+                            TextColor="#2E2A24"
+                            BackgroundColor="Transparent"
+                            Date="2026-11-02"
+                            MinimumDate="2026-10-01"
+                            MaximumDate="2027-03-31" />
+            </Border>
 
             <!-- Частота тренировок -->
             <Label x:Name="VisitsTitleLabel"
