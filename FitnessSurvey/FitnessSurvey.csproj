@@ -21,6 +21,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.110" />
+  </ItemGroup>
+
+  <ItemGroup>
     <MauiIcon Include="Resources\AppIcon\appicon.svg" Color="#1B3A5C" />
     <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#1B3A5C" BaseSize="128,128" />
     <MauiImage Include="Resources\Images\*" />
