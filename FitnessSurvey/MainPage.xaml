@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FitnessSurvey.MainPage"
              Title="Анкета фитнес-клуба"
-             BackgroundColor="#F5F7FA">
+             BackgroundColor="#FAF4E8">
 
     <ScrollView x:Name="SurveyScroll"
                 Orientation="Vertical">
@@ -46,43 +46,63 @@
                        Grid.Row="1"
                        Grid.Column="1"
                        Text="Анкета для записи на первую тренировку"
-                       FontSize="14"
+                       FontSize="15"
                        FontAttributes="Italic"
-                       TextColor="#5A6B7D" />
+                       TextColor="#6E6456" />
             </Grid>
 
             <!-- Имя -->
             <Label x:Name="NameLabel"
                    Text="Имя и фамилия"
-                   FontSize="16"
+                   FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C"
                    Margin="0,4,0,0" />
-            <Entry x:Name="NameEntry"
-                   Placeholder="Например: Никита Козлов"
-                   Keyboard="Text"
-                   MaxLength="40"
-                   ClearButtonVisibility="WhileEditing"
-                   Margin="0,0,0,4"
-                   TextChanged="OnRequiredFieldChanged" />
+            <Border x:Name="NameEntryBorder"
+                    Stroke="#C9BCA6"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    BackgroundColor="#FFFFFF"
+                    Padding="10,2"
+                    Margin="0,0,0,4">
+                <Entry x:Name="NameEntry"
+                       Placeholder="Например: Никита Козлов"
+                       FontSize="16"
+                       TextColor="#2E2A24"
+                       BackgroundColor="Transparent"
+                       Keyboard="Text"
+                       MaxLength="40"
+                       ClearButtonVisibility="WhileEditing"
+                       TextChanged="OnRequiredFieldChanged" />
+            </Border>
 
             <!-- Телефон -->
             <Label x:Name="PhoneLabel"
                    Text="Контактный телефон"
-                   FontSize="16"
+                   FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
-            <Entry x:Name="PhoneEntry"
-                   Placeholder="+7 900 123-45-67"
-                   Keyboard="Telephone"
-                   MaxLength="18"
-                   ClearButtonVisibility="WhileEditing"
-                   Margin="0,0,0,4"
-                   TextChanged="OnRequiredFieldChanged" />
+            <Border x:Name="PhoneEntryBorder"
+                    Stroke="#C9BCA6"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    BackgroundColor="#FFFFFF"
+                    Padding="10,2"
+                    Margin="0,0,0,4">
+                <Entry x:Name="PhoneEntry"
+                       Placeholder="+7 900 123-45-67"
+                       FontSize="16"
+                       TextColor="#2E2A24"
+                       BackgroundColor="Transparent"
+                       Keyboard="Telephone"
+                       MaxLength="18"
+                       ClearButtonVisibility="WhileEditing"
+                       TextChanged="OnRequiredFieldChanged" />
+            </Border>
 
             <Label x:Name="HintLabel"
                    Text="Заполните имя и телефон — без них заявку не примут"
-                   FontSize="13"
+                   FontSize="14"
                    FontAttributes="Italic"
                    TextColor="#C0392B"
                    IsVisible="True"
@@ -91,11 +111,14 @@
             <!-- Направление -->
             <Label x:Name="DirectionLabel"
                    Text="Направление тренировок"
-                   FontSize="16"
+                   FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
             <Picker x:Name="DirectionPicker"
                     Title="Выберите направление"
+                    FontSize="16"
+                    TextColor="#2E2A24"
+                    BackgroundColor="#FFFFFF"
                     Margin="0,0,0,4">
                 <Picker.Items>
                     <x:String>Тренажёрный зал</x:String>
@@ -108,7 +131,7 @@
             <!-- Уровень подготовки -->
             <Label x:Name="LevelLabel"
                    Text="Уровень подготовки"
-                   FontSize="16"
+                   FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
             <VerticalStackLayout x:Name="LevelGroup"
@@ -132,7 +155,7 @@
             <!-- Дополнительные услуги -->
             <Label x:Name="ExtrasLabel"
                    Text="Дополнительно"
-                   FontSize="16"
+                   FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
             <HorizontalStackLayout x:Name="TrainerRow"
@@ -144,7 +167,7 @@
                           VerticalOptions="Center" />
                 <Label x:Name="TrainerCheckLabel"
                        Text="Нужен персональный тренер"
-                       FontSize="15"
+                       FontSize="16"
                        FontAttributes="None"
                        VerticalOptions="Center" />
             </HorizontalStackLayout>
@@ -157,7 +180,7 @@
                           VerticalOptions="Center" />
                 <Label x:Name="NewsCheckLabel"
                        Text="Присылать расписание и акции клуба"
-                       FontSize="15"
+                       FontSize="16"
                        FontAttributes="None"
                        VerticalOptions="Center" />
             </HorizontalStackLayout>
@@ -171,7 +194,7 @@
                         VerticalOptions="Center" />
                 <Label x:Name="MorningLabel"
                        Text="Удобно заниматься утром, до 12:00"
-                       FontSize="15"
+                       FontSize="16"
                        FontAttributes="None"
                        VerticalOptions="Center" />
             </HorizontalStackLayout>
@@ -179,11 +202,14 @@
             <!-- Дата старта -->
             <Label x:Name="DateLabel"
                    Text="Желаемая дата первой тренировки"
-                   FontSize="16"
+                   FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
             <DatePicker x:Name="StartDatePicker"
                         Format="dd.MM.yyyy"
+                        FontSize="16"
+                        TextColor="#2E2A24"
+                        BackgroundColor="#FFFFFF"
                         Date="2026-11-02"
                         MinimumDate="2026-10-01"
                         MaximumDate="2027-03-31"
@@ -192,7 +218,7 @@
             <!-- Частота тренировок -->
             <Label x:Name="VisitsTitleLabel"
                    Text="Сколько раз в неделю планируете приходить"
-                   FontSize="16"
+                   FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
             <Slider x:Name="VisitsSlider"
@@ -205,7 +231,7 @@
                     Margin="0,4,0,0" />
             <Label x:Name="VisitsLabel"
                    Text="{Binding Source={x:Reference VisitsSlider}, Path=Value, Mode=OneWay, StringFormat='Выбрано: {0:F0} раз(а) в неделю'}"
-                   FontSize="15"
+                   FontSize="16"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C"
                    Margin="0,0,0,4" />
@@ -213,15 +239,25 @@
             <!-- Комментарий -->
             <Label x:Name="CommentLabel"
                    Text="Пожелания и ограничения по здоровью"
-                   FontSize="16"
+                   FontSize="17"
                    FontAttributes="Bold"
                    TextColor="#1B3A5C" />
-            <Editor x:Name="CommentEditor"
-                    Placeholder="Травмы, хронические заболевания, удобное время занятий"
-                    AutoSize="TextChanges"
-                    MaxLength="300"
-                    HeightRequest="110"
-                    Margin="0,0,0,8" />
+            <Border x:Name="CommentEditorBorder"
+                    Stroke="#C9BCA6"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 8"
+                    BackgroundColor="#FFFFFF"
+                    Padding="10,2"
+                    Margin="0,0,0,8">
+                <Editor x:Name="CommentEditor"
+                        Placeholder="Травмы, хронические заболевания, удобное время занятий"
+                        FontSize="16"
+                        TextColor="#2E2A24"
+                        BackgroundColor="Transparent"
+                        AutoSize="TextChanges"
+                        MaxLength="300"
+                        HeightRequest="110" />
+            </Border>
 
             <!-- Кнопки -->
             <Grid x:Name="ButtonsGrid"
@@ -239,7 +275,7 @@
                         Grid.Row="0"
                         Grid.Column="0"
                         Text="Показать результат"
-                        FontSize="16"
+                        FontSize="17"
                         BackgroundColor="#1B3A5C"
                         TextColor="White"
                         CornerRadius="8"
@@ -249,7 +285,7 @@
                         Grid.Row="0"
                         Grid.Column="1"
                         Text="Очистить"
-                        FontSize="16"
+                        FontSize="17"
                         BackgroundColor="#B0BEC5"
                         TextColor="#1B3A5C"
                         CornerRadius="8"
@@ -263,7 +299,7 @@
                     Stroke="#1B3A5C"
                     StrokeThickness="1"
                     StrokeShape="RoundRectangle 10"
-                    BackgroundColor="White"
+                    BackgroundColor="#FFFDF8"
                     Padding="16">
                 <VerticalStackLayout x:Name="ResultLayout" Spacing="6">
                     <Label x:Name="ResultTitleLabel"
@@ -273,9 +309,10 @@
                            TextColor="#1B3A5C" />
                     <Label x:Name="ResultLabel"
                            Text=""
-                           FontSize="14"
+                           FontSize="15"
                            FontAttributes="None"
-                           TextColor="#263238" />
+                           LineHeight="1.4"
+                           TextColor="#2E2A24" />
                 </VerticalStackLayout>
             </Border>
 
