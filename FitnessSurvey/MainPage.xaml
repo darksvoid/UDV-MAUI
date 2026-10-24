@@ -5,7 +5,8 @@
              Title="Анкета фитнес-клуба"
              BackgroundColor="#F5F7FA">
 
-    <ScrollView x:Name="SurveyScroll">
+    <ScrollView x:Name="SurveyScroll"
+                Orientation="Vertical">
         <VerticalStackLayout x:Name="SurveyLayout"
                              Spacing="12"
                              Padding="20,24,20,32">
@@ -61,6 +62,7 @@
                    Placeholder="Например: Никита Козлов"
                    Keyboard="Text"
                    MaxLength="40"
+                   ClearButtonVisibility="WhileEditing"
                    Margin="0,0,0,4"
                    TextChanged="OnRequiredFieldChanged" />
 
@@ -74,6 +76,7 @@
                    Placeholder="+7 900 123-45-67"
                    Keyboard="Telephone"
                    MaxLength="18"
+                   ClearButtonVisibility="WhileEditing"
                    Margin="0,0,0,4"
                    TextChanged="OnRequiredFieldChanged" />
 
